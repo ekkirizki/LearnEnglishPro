@@ -16,7 +16,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
+
 
 /**
  * logika utk mengambil data dari database, dan
@@ -210,8 +212,6 @@ public class KamusDatabase {
             masukanDiKamus();
         }
 
-
-
         // mulai sebuah thread utk masukan sebuah
         // table di database beserta kata-katanya
 
@@ -220,6 +220,8 @@ public class KamusDatabase {
                 public void run() {
                     try {
                         masukanKataKata();
+                        masukanKataKata1();
+                        masukanKataKata2();
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
@@ -249,6 +251,49 @@ public class KamusDatabase {
             Log.d(TAG, "selesai loading kata-kata.");
         }
 
+        private void masukanKataKata1() throws IOException {
+            Log.d(TAG, "tunggu yah sedang masukan kata...");
+            final Resources sumberKataKata = bantuBukaDB.getResources();
+            InputStream masukanKataKata = sumberKataKata.openRawResource(R.raw.english_indonesia);
+            BufferedReader membacaKataKata = new BufferedReader(new InputStreamReader(masukanKataKata));
+
+            try {
+                String barisanKataKata;
+                while ((barisanKataKata = membacaKataKata.readLine()) != null) {
+                    String[] daftarKataKata = TextUtils.split(barisanKataKata, "\t");
+                    if (daftarKataKata.length < 2) continue;
+                    long idKataKata = tambahKataKata(daftarKataKata[0].trim(), daftarKataKata[1].trim());
+                    if (idKataKata < 0) {
+                        Log.e(TAG, "tak bisa menambah Kata: " + daftarKataKata[0].trim());
+                    }
+                }
+            } finally {
+                membacaKataKata.close();
+            }
+            Log.d(TAG, "selesai loading kata-kata.");
+        }
+
+        private void masukanKataKata2() throws IOException {
+            Log.d(TAG, "tunggu yah sedang masukan kata...");
+            final Resources sumberKataKata = bantuBukaDB.getResources();
+            InputStream masukanKataKata = sumberKataKata.openRawResource(R.raw.indonesia_english);
+            BufferedReader membacaKataKata = new BufferedReader(new InputStreamReader(masukanKataKata));
+
+            try {
+                String barisanKataKata;
+                while ((barisanKataKata = membacaKataKata.readLine()) != null) {
+                    String[] daftarKataKata = TextUtils.split(barisanKataKata, "\t");
+                    if (daftarKataKata.length < 2) continue;
+                    long idKataKata = tambahKataKata(daftarKataKata[0].trim(), daftarKataKata[1].trim());
+                    if (idKataKata < 0) {
+                        Log.e(TAG, "tak bisa menambah Kata: " + daftarKataKata[0].trim());
+                    }
+                }
+            } finally {
+                membacaKataKata.close();
+            }
+            Log.d(TAG, "selesai loading kata-kata.");
+        }
 
         // tambah kata untuk membentang ke bawah.
         // @return rowId or -1 jikalau gagal
@@ -268,6 +313,4 @@ public class KamusDatabase {
             gantiDataBase.execSQL("DROP TABLE IF EXISTS " + TEMPAT_MUNCUL_KATA);
             onCreate(gantiDataBase);
         }
-    }
-
-}
+}}

@@ -1,44 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="nama_aplikasi">Learn English Pro</string>
+    <string name="nama_aplikasi">Learn English Pro</string>
 
-<!-- label yg muncul(merek) -->
-<string name="namaLabelNya">Digital Dictionary</string>
+    <!-- label yg muncul(merek) -->
+    <string name="namaLabelNya">Digital Dictionary</string>
 
-<!-- tulisan yg muncul pada kotak cari. -->
-<string name="tulisanDiKotakCari">Search here---</string>
+    <!-- tulisan yg muncul pada kotak cari. -->
+    <string name="tulisanDiKotakCari">Search here---</string>
 
-<!-- untuk menu. -->
-<string name="menu_cari">Search---</string>
+    <!-- untuk menu. -->
+    <string name="menu_cari">Search---</string>
 
-<!-- akan terlihat di search settings utk kode ini.  -->
-<string name="artinya">Means</string>
+    <!-- akan terlihat di search settings utk kode ini.  -->
+    <string name="artinya">Means</string>
 
-<!-- instruksi pada halaman utama. -->
-<string name="instruksi_utama">Search what you want search</string>
+    <!-- instruksi pada halaman utama. -->
+    <string name="instruksi_utama">Search what you want search</string>
 
-<!-- akan di tunjukan di atas hasil pencarian -->
-<plurals name="hasil_pencarian">
-    <item quantity="one">%1$d result for \"%2$s\": </item>
-    <item quantity="other">%1$d results for \"%2$s\": </item>
-</plurals>
+    <!-- akan di tunjukan di atas hasil pencarian -->
+    <plurals name="hasil_pencarian">
+        <item quantity="one">%1$d result for \"%2$s\": </item>
+        <item quantity="other">%1$d results for \"%2$s\": </item>
+    </plurals>
 
-<!-- ketika pencarian gagal -->
-<string name="tak_ada_hasil">Empty \"%s\" in database</string>
-<string name="app_name">app_name</string>
+    <!-- ketika pencarian gagal -->
+    <string name="tak_ada_hasil">Empty \"%s\" in database</string>
+    <string name="app_name">app_name</string>
 
 
-<!-- String untuk login
+    <!-- String untuk login
 <string name="app_name">LoginRegisterScreenDesign</string> -->
-<string name="create_account">
+    <string name="create_account">
     <font color="#00ff00">text</font>
     </string>
-<string name="email">Email</string>
-<string name="password">Password</string>
-<string name="login">Login</string>
-<string name="username">Username</string>
-<string name="register">Register</string>
-<string name="back_to_login">Back to Login</string>
-<string name="kamu_telah_berhasil_login">Successful</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="register">Register</string>
+    <string name="back_to_login">Back to Login</string>
+    <string name="kamu_telah_berhasil_login">Successful</string>
+    <string name="beranda">beranda</string>
+    <string name="kamus">Kamus</string>
+    <string name="materi">Materi</string>
+    <string name="openDrawer">buka drawer</string>
+    <string name="closeDrawer">tutup drawer</string>
+    <string name="title_activity_x1">x1</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
